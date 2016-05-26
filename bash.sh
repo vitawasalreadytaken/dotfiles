@@ -119,5 +119,5 @@ alias act='source env/bin/activate'
 alias ipy='ipython'
 alias newe='virtualenv -p $(which python3) env && act && pip install pip-accel'
 alias pipa='pip-accel'
-alias atenv='atom env/lib/python3.4/site-packages' # Open virtualenv packages in Atom
+alias atenv='atom env/lib/python*/site-packages' # Open virtualenv packages in Atom
 alias reset-env='deactivate; rm -rf env && newe && pipa install -r requirements.txt'
