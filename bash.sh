@@ -121,3 +121,4 @@ alias newe='virtualenv -p $(which python3) env && act && pip install pip-accel'
 alias pipa='pip-accel'
 alias atenv='atom env/lib/python*/site-packages' # Open virtualenv packages in Atom
 alias reset-env='deactivate; rm -rf env && newe && pipa install -r requirements.txt'
+alias partest='py.test -n2 --ignore env' # Parallel test run; requires pytest-xdist
