@@ -93,7 +93,7 @@ GIT() {
 }
 
 alias gs='git status'
-alias gl='git log'
+alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ad)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'"
 gd() { git diff --color $@ | diff-so-fancy | less -R; }
 gdc() { git diff --cached --color $@ | diff-so-fancy | less -R; }
 alias gc='git commit'
