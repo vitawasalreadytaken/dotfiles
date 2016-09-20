@@ -106,6 +106,7 @@ alias gg='git grep -npE --break'
 alias upg='git fetch --prune && git fetch --tags' # update git
 alias grv='git remote -v'
 alias gpu='git pull'
+alias gre1='git reset HEAD~1'
 # Fix autocomplete for aliases
 __git_complete gb _git_checkout
 __git_complete gm _git_merge
