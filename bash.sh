@@ -124,3 +124,4 @@ alias atenv='atom env/lib/python*/site-packages' # Open virtualenv packages in A
 alias reset-env='deactivate; rm -rf env && newe && pipa install -r requirements.txt'
 alias partest='(pip freeze 2>/dev/null | grep pytest-xdist >/dev/null) || pipa install pytest-xdist; py.test -n2 --ignore env' # Parallel test run; installs pytest-xdist if necessary.
 mkpak () { mkdir $1 && touch $1/__init__.py && tree $1; } # Create an empty Python package
+alias flk='pyflakes-ext'
