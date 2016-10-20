@@ -122,6 +122,7 @@ alias newe='virtualenv -p $(which python3) env && act && pip install pip-accel'
 alias pipa='pip-accel'
 alias atenv='atom env/lib/python*/site-packages' # Open virtualenv packages in Atom
 alias reset-env='deactivate; rm -rf env && newe && pipa install -r requirements.txt'
-alias partest='(pip freeze 2>/dev/null | grep pytest-xdist >/dev/null) || pipa install pytest-xdist; py.test -n2 --ignore env' # Parallel test run; installs pytest-xdist if necessary.
+alias partest='(pip freeze 2>/dev/null | grep pytest-xdist >/dev/null) || pipa install pytest-xdist; py.test -n2 --ignore env -v -s' # Parallel test run; installs pytest-xdist if necessary.
+alias pyt='py.test --ignore=env -v -s'
 mkpak () { mkdir $1 && touch $1/__init__.py && tree $1; } # Create an empty Python package
 alias flk='pyflakes-ext'
