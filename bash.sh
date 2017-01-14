@@ -21,6 +21,7 @@ mkcd () { mkdir "$1" && cd "$1"; }
 # Screen
 alias sl='screen -ls'
 alias sr='screen -dr'
+alias http='python3 -m http.server --bind 127.0.0.1'
 
 
 
