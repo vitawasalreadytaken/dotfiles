@@ -127,3 +127,6 @@ alias partest='(pip freeze 2>/dev/null | grep pytest-xdist >/dev/null) || pipa i
 alias pyt='py.test --ignore=env -v -s'
 mkpak () { mkdir $1 && touch $1/__init__.py && tree $1; } # Create an empty Python package
 alias flk='pyflakes-ext'
+
+export WORKON_HOME=~/.venvs
+source /usr/local/bin/virtualenvwrapper.sh
