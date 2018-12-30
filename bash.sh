@@ -103,7 +103,7 @@ alias ga='git add'
 alias gb='git checkout'
 alias gp='git push'
 alias gpo='git push origin'
-alias gg="ag --pager='less -RFX' --case-sensitive"
+alias gg="ag --pager='less -RFX' --case-sensitive --hidden"
 alias upg='git fetch --prune && git fetch --tags' # update git
 alias grv='git remote -v'
 alias gpu='git pull'
