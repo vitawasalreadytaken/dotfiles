@@ -14,8 +14,7 @@ alias ...='cd ../..'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color'
-alias ll='ls -lhFG'
-alias la='ll -A'
+alias ll='exa --long --all --group'
 alias tree='tree -h'
 mkcd () { mkdir "$1" && cd "$1"; }
 # Screen
