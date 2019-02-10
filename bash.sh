@@ -18,6 +18,8 @@ alias ll='exa --long --all --group'
 alias tree='tree -h'
 mkcd () { mkdir "$1" && cd "$1"; }
 alias http='python3 -m http.server --bind 127.0.0.1'
+alias b='bat'
+alias vs='code' # VSCode
 
 
 
@@ -108,6 +110,7 @@ alias gre1='git reset HEAD~1'
 # Fix autocomplete for aliases
 __git_complete gb _git_checkout
 __git_complete gm _git_merge
+__git_complete grb _git_rebase
 
 
 
