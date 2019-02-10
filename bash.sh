@@ -120,6 +120,5 @@ alias pyt='py.test -vs'
 mkpak () { mkdir $1 && touch $1/__init__.py && tree $1; } # Create an empty Python package
 alias flk='pyflakes-ext'
 
-export WORKON_HOME=~/.venvs
-export VIRTUALENVWRAPPER_PYTHON=$(which python3) # The default is 'which python' which finds Python 2 :(
-source /usr/local/bin/virtualenvwrapper.sh
+_here="${BASH_SOURCE%/*}"
+source "${_here}/virtualenvwrapper_setup.sh"
