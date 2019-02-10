@@ -17,9 +17,6 @@ alias grep='grep --color'
 alias ll='exa --long --all --group'
 alias tree='tree -h'
 mkcd () { mkdir "$1" && cd "$1"; }
-# Screen
-alias sl='screen -ls'
-alias sr='screen -dr'
 alias http='python3 -m http.server --bind 127.0.0.1'
 
 
@@ -100,7 +97,6 @@ alias gc='git commit'
 alias gm='git merge --no-ff'
 alias ga='git add'
 alias gb='git checkout'
-alias gp='git push'
 alias gpo='git push origin'
 alias gg="ag --pager='less -RFX' --case-sensitive --hidden --ignore .git"
 alias upg='git fetch --prune && git fetch --tags' # update git
@@ -118,13 +114,9 @@ __git_complete gm _git_merge
 #
 # Python.
 #
-alias act='source env/bin/activate'
 alias ipy='ipython'
-alias newe='virtualenv -p $(which python3) env && act'
-alias atenv='atom env/lib/python*/site-packages' # Open virtualenv packages in Atom
-alias reset-env='deactivate; rm -rf env && newe && pip install -r requirements.txt'
-alias partest='(pip freeze 2>/dev/null | grep pytest-xdist >/dev/null) || pip install pytest-xdist; py.test -n2 --ignore env -v -s' # Parallel test run; installs pytest-xdist if necessary.
-alias pyt='py.test --ignore=env -v -s'
+alias partest='(pip freeze 2>/dev/null | grep pytest-xdist >/dev/null) || pip install pytest-xdist; py.test -n2 -vs' # Parallel test run; installs pytest-xdist if necessary.
+alias pyt='py.test -vs'
 mkpak () { mkdir $1 && touch $1/__init__.py && tree $1; } # Create an empty Python package
 alias flk='pyflakes-ext'
 
