@@ -73,24 +73,24 @@ fi
 # develop ↑1 ↓0
 #  M requirements.txt
 #  M setup.py
-gitInfo() {
+git_info() {
 	branch=$(git symbolic-ref HEAD --short)
-	originStatus=$(git rev-list --left-right $branch...origin/$branch --count 2>/dev/null | awk '{print "↑" $1 " ↓" $2}')
-	if [ -z "$originStatus" ]; then
-		originStatus='(no upstream)'
+	origin_status=$(git rev-list --left-right $branch...origin/$branch --count 2>/dev/null | awk '{print "↑" $1 " ↓" $2}')
+	if [ -z "$origin_status" ]; then
+		origin_status='(no upstream)'
 	fi
 
 	echo -ne '\033[1;30m' # gray
-	echo $branch $originStatus
+	echo $branch $origin_status
 	echo -ne '\033[0m' # reset
 	git status --short
 }
 
-# Show gitInfo before each prompt. Set terminal title to the first argument (defaults to the basename of current directory).
+# Show git_info before each prompt. Set terminal title to the first argument (defaults to the basename of current directory).
 GIT() {
 	def=$(basename $(pwd))
 	title ${1:-"$def"}
-	export PROMPT_COMMAND=gitInfo
+	export PROMPT_COMMAND=git_info
 }
 
 alias gs='git status'
