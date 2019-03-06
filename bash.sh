@@ -132,3 +132,5 @@ vg () {
 	# Run commands inside Vagrant.
 	vagrant ssh -c "$*"
 }
+
+alias st='open -a SourceTree'
