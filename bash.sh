@@ -1,7 +1,9 @@
 #
 # Basic setup.
 #
-export PATH="${HOME}/bin:/usr/local/bin:${PATH}"
+export PATH="${HOME}/.local/bin:$PATH" # pipx binaries
+export PATH="${HOME}/bin:${PATH}" # custom scripts
+# Example prompt: `vita@host ~/some/dir $`
 export PS1='\[\033[1;36m\]\u@\h\[\033[00m\] \[\033[1;34m\]\w \$\[\033[00m\] '
 
 
