@@ -117,7 +117,7 @@ __git_complete grb _git_rebase
 
 
 #
-# Python.
+# Python & development.
 #
 alias ipy='ipython'
 alias partest='(pip freeze 2>/dev/null | grep pytest-xdist >/dev/null) || pip install pytest-xdist; py.test -n2 -vs' # Parallel test run; installs pytest-xdist if necessary.
@@ -127,3 +127,8 @@ alias flk='pyflakes-ext'
 
 _here="${BASH_SOURCE%/*}"
 source "${_here}/virtualenvwrapper_setup.sh"
+
+vg () {
+	# Run commands inside Vagrant.
+	vagrant ssh -c "$*"
+}
