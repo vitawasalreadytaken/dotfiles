@@ -124,6 +124,8 @@ alias partest='(pip freeze 2>/dev/null | grep pytest-xdist >/dev/null) || pip in
 alias pyt='py.test -vs'
 mkpak () { mkdir $1 && touch $1/__init__.py && tree $1; } # Create an empty Python package
 alias flk='pyflakes-ext'
+alias pi='pip install'
+alias piu='pip install --upgrade'
 
 _here="${BASH_SOURCE%/*}"
 source "${_here}/virtualenvwrapper_setup.sh"
