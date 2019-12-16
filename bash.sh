@@ -114,6 +114,10 @@ __git_complete gb _git_checkout
 __git_complete gm _git_merge
 __git_complete grb _git_rebase
 
+# Itemised commit messages on this branch from the given ref (defaults to master).
+branchlog () {
+	git log --format=format:'* %s' --reverse ${1:-master}..
+}
 
 
 #
