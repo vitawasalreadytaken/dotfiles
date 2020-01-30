@@ -7,6 +7,7 @@ export PATH="${HOME}/bin:${PATH}" # custom scripts
 export PS1='\[\033[1;36m\]\u@\h\[\033[00m\] \[\033[1;34m\]\w \$\[\033[00m\] '
 export GPG_TTY=$(tty)
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export HISTCONTROL="$HISTCONTROL:ignoredups"
 
 
 #
