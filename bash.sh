@@ -129,6 +129,12 @@ branchlog () {
 #
 # Python & development.
 #
+
+#-- brew install pyenv pyenv-virtualenvwrapper
+#-- V=3.8.2; pyenv install $V && pyenv global $V
+eval "$(pyenv init -)"
+pyenv virtualenvwrapper
+
 alias ipy='ipython'
 alias partest='(pip freeze 2>/dev/null | grep pytest-xdist >/dev/null) || pip install pytest-xdist; py.test -n2 -vs' # Parallel test run; installs pytest-xdist if necessary.
 alias pyt='py.test -vs'
@@ -137,8 +143,9 @@ alias flk='pyflakes-ext'
 alias pi='pip install'
 alias piu='pip install --upgrade'
 
-_here="${BASH_SOURCE%/*}"
-source "${_here}/virtualenvwrapper_setup.sh"
+# Replaced with `pyenv virtualenvwrapper` above
+#_here="${BASH_SOURCE%/*}"
+#source "${_here}/virtualenvwrapper_setup.sh"
 
 vg () {
 	# Run commands inside Vagrant.
