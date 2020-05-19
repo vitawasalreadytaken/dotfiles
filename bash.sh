@@ -62,6 +62,9 @@ hr() {
 	echo -e '\033[39m'
 }
 
+# Run my default layout in the 'Hotkey Window' (top of the screen window) in iTerm
+alias T='itermocil --here top'
+
 
 
 #
