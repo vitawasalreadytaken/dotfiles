@@ -146,6 +146,21 @@ alias flk='pyflakes-ext'
 alias pi='pip install'
 alias piu='pip install --upgrade'
 
+# Use `fsw some command with arguments...` to watch the current working directory
+# and re-run the command when a file changes.
+fsw () {
+	while true; do
+		fswatch --one-event --recursive .
+		echo -ne '\033[1;36m' # cyan
+		echo "---------- $(date '+%H:%M:%S') ----------"
+		echo ">>> $@"
+		echo -ne '\033[00m' # reset colour
+		$@
+		echo
+		sleep 1
+	done
+}
+
 # Replaced with `pyenv virtualenvwrapper` above
 #_here="${BASH_SOURCE%/*}"
 #source "${_here}/virtualenvwrapper_setup.sh"
