@@ -146,6 +146,13 @@ alias flk='pyflakes-ext'
 alias pi='pip install'
 alias piu='pip install --upgrade'
 
+# Open a Python module in VSCode. Works on virtualenv and stdlib modules as well.
+vsmod () {
+	path=$(python -c 'import '$1' as m; print(m.__path__[0])')
+	echo "$path"
+	vs "$path"
+}
+
 # Use `fsw some command with arguments...` to watch the current working directory
 # and re-run the command when a file changes.
 fsw () {
