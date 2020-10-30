@@ -16,6 +16,8 @@ gpgconf --launch gpg-agent
 # Bash UX
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export HISTCONTROL="$HISTCONTROL:ignoredups"
+# Get rid of 'The default interactive shell is now zsh' message on Catalina.
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Ruby gems
 export GEM_HOME=$HOME/.gem
