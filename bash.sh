@@ -38,6 +38,8 @@ mkcd () { mkdir "$1" && cd "$1"; }
 alias http='python3 -m http.server --bind 127.0.0.1'
 alias b='bat'
 alias vs='code' # VSCode
+alias 'v.'='vs .'
+alias k='kubectl'
 
 
 
