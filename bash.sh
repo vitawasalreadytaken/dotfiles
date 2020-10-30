@@ -3,15 +3,23 @@
 #
 export PATH="${HOME}/.local/bin:$PATH" # pipx binaries
 export PATH="${HOME}/bin:${PATH}" # custom scripts
+export PATH="/usr/local/opt/ruby/bin:$PATH" # ruby installed with Homebrew
+
 # Example prompt: `vita@host ~/some/dir $`
 export PS1='\[\033[1;36m\]\u@\h\[\033[00m\] \[\033[1;34m\]\w \$\[\033[00m\] '
 
+# GPG
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+# Bash UX
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export HISTCONTROL="$HISTCONTROL:ignoredups"
+
+# Ruby gems
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
 
 
 #
