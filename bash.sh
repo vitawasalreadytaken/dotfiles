@@ -169,7 +169,7 @@ vsmod () {
 # and re-run the command when a file changes.
 fsw () {
 	while true; do
-		fswatch --one-event --recursive .
+		fswatch --one-event --exclude '/\.git/' --recursive .
 		echo -ne '\033[1;36m' # cyan
 		echo "---------- $(date '+%H:%M:%S') ----------"
 		echo ">>> $@"
