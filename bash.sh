@@ -119,6 +119,7 @@ alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold bl
 gd() { git diff --color $@ | diff-so-fancy | less -R; }
 gdc() { git diff --cached --color $@ | diff-so-fancy | less -R; }
 alias gc='git commit'
+alias gca='git commit --amend'
 alias gm='git merge --no-ff'
 alias ga='git add'
 alias gb='git checkout'
