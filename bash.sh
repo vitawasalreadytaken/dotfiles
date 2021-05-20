@@ -121,6 +121,7 @@ gdc() { git diff --cached --color $@ | diff-so-fancy | less -R; }
 alias gc='git commit'
 alias gca='git commit --amend'
 alias gm='git merge --no-ff'
+alias gpum='git fetch origin master:master'
 alias ga='git add'
 alias gb='git checkout'
 alias gpo='git push origin'
