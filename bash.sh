@@ -158,6 +158,7 @@ alias pyt='py.test -vs'
 mkpak () { mkdir $1 && touch $1/__init__.py && tree $1; } # Create an empty Python package
 alias flk='pyflakes-ext'
 alias pi='pip install'
+alias pir='pip install -r'
 alias piu='pip install --upgrade'
 
 # Open a Python module in VSCode. Works on virtualenv and stdlib modules as well.
