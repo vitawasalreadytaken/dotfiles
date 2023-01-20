@@ -31,6 +31,7 @@ alias b='bat'
 alias vs='code' # VSCode
 alias 'v.'='vs .'
 alias k='kubectl'
+alias itm='itermocil --here'
 
 
 #
