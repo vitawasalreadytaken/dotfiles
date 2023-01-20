@@ -6,6 +6,18 @@ export PATH="${HOME}/.local/bin:$PATH" # pipx binaries
 export PATH="${HOME}/bin:${PATH}" # custom scripts
 # export PATH="/usr/local/opt/ruby/bin:$PATH" # ruby installed with Homebrew
 
+# Completion: https://docs.brew.sh/Shell-Completion
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  autoload -Uz compinit
+  # Had to disable the owner check with '-u' because I have a multi-user system:
+  # https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories
+  compinit -u
+fi
+
+bindkey \^U backward-kill-line
+
 # Example prompt: `vita@host ~/some/dir %`
 export PS1='%B%F{cyan}%n@%m%f %F{blue}%~%f %#%b '
 
