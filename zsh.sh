@@ -89,7 +89,7 @@ hr() {
 # Print working directory status.
 # Example:
 #
-# master ↑1 ↓0
+# main ↑1 ↓0
 #  M requirements.txt
 #  M setup.py
 git_info() {
@@ -119,7 +119,7 @@ gdc() { git diff --cached --color $@ | diff-so-fancy | less -R; }
 alias gc='git commit'
 alias gca='git commit --amend'
 alias gm='git merge --no-ff'
-alias gpum='git fetch origin master:master'
+alias gpum='git fetch origin main:main'
 alias ga='git add'
 alias gb='git checkout'
 alias gpo='git push origin'
@@ -131,9 +131,9 @@ alias guu='upg && gpu'
 alias grb='git rebase'
 alias gre1='git reset HEAD~1'
 
-# Itemised commit messages on this branch from the given ref (defaults to master).
+# Itemised commit messages on this branch from the given ref (defaults to main).
 branchlog () {
-	git log --format=format:'* %s' --reverse ${1:-master}..
+	git log --format=format:'* %s' --reverse ${1:-main}..
 }
 
 
