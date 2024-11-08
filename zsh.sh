@@ -18,6 +18,9 @@ fi
 
 bindkey \^U backward-kill-line
 
+# Do not store commands prefixed with a space in history
+setopt HIST_IGNORE_SPACE
+
 # Example prompt: `vita@host ~/some/dir %`
 export PS1='%B%F{cyan}%n@%m%f %F{blue}%~%f %#%b '
 
