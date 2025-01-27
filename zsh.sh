@@ -38,7 +38,7 @@ alias ...='cd ../..'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color'
-alias ll='exa --long --all --group'
+alias ll='eza --long --all --group'
 alias tree='tree -h'
 mkcd () { mkdir "$1" && cd "$1"; }
 alias http='python3 -m http.server --bind 127.0.0.1'
