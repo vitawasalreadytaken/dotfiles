@@ -171,3 +171,16 @@ alias pir='pip install -r'
 alias piu='pip install --upgrade'
 mkpak () { mkdir $1 && touch $1/__init__.py && tree $1; } # Create an empty Python package
 alias st='open -a SourceTree'
+
+# uv
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+# https://github.com/astral-sh/uv/issues/8432#issuecomment-2453494736
+_uv_run_mod() {
+    if [[ "$words[2]" == "run" && "$words[CURRENT]" != -* ]]; then
+        _arguments '*:filename:_files'
+    else
+        _uv "$@"
+    fi
+}
+compdef _uv_run_mod uv
