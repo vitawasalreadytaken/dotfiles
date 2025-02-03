@@ -166,9 +166,6 @@ export PS1="\$(__pyenv_virtualenv_ps1)${PS1}"
 #- Common aliases
 alias ipy='ipython'
 alias pyt='py.test -vs'
-alias pi='pip install'
-alias pir='pip install -r'
-alias piu='pip install --upgrade'
 mkpak () { mkdir $1 && touch $1/__init__.py && tree $1; } # Create an empty Python package
 alias st='open -a SourceTree'
 
