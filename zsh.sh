@@ -18,8 +18,10 @@ fi
 
 bindkey \^U backward-kill-line
 
-# Do not store commands prefixed with a space in history
-setopt HIST_IGNORE_SPACE
+
+setopt HIST_IGNORE_SPACE      # Do not store commands prefixed with a space in history
+setopt HIST_IGNORE_DUPS       # Ignores if the previous command is a duplicate
+setopt HIST_FIND_NO_DUPS      # Prevents showing dups when using reverse search (Ctrl+R)
 
 # Example prompt: `vita@host ~/some/dir %`
 export PS1='%B%F{cyan}%n@%m%f %F{blue}%~%f %#%b '
