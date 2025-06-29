@@ -37,6 +37,8 @@ ulimit -n 1024
 # No need to share with other users by default
 umask 077
 
+alias espanso-config='code ~/Library/Application\ Support/espanso'
+
 #
 # Essential commands.
 #
