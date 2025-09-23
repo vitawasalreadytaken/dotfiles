@@ -153,25 +153,6 @@ branchlog () {
 # Python
 #
 
-#- Environment setup
-eval "$(pyenv init --path)"
-# This redundant-looking init was necessary to make `pyenv virtualenv activate` work: https://stackoverflow.com/a/70307478
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-export PYENV_VIRTUALENV_VERBOSE_ACTIVATE=1
-# 'pyenv-virtualenv: prompt changing will be removed from future release' so we implement the same functionality manually:
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-__pyenv_virtualenv_ps1 () {
-	# From https://github.com/pyenv/pyenv-virtualenv/issues/153
-    local ret=$?
-    if [ -n "${PYENV_VIRTUAL_ENV}" ]; then
-        echo -n "(${PYENV_VIRTUAL_ENV##*/}) "
-    fi
-    return $?
-}
-setopt PROMPT_SUBST
-export PS1="\$(__pyenv_virtualenv_ps1)${PS1}"
-
 #- Common aliases
 alias ipy='ipython'
 alias pyt='py.test -vs'
