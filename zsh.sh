@@ -23,6 +23,9 @@ setopt HIST_IGNORE_SPACE      # Do not store commands prefixed with a space in h
 setopt HIST_IGNORE_DUPS       # Ignores if the previous command is a duplicate
 setopt HIST_FIND_NO_DUPS      # Prevents showing dups when using reverse search (Ctrl+R)
 
+# fzf
+source <(fzf --zsh)
+
 # Example prompt: `vita@host ~/some/dir %`
 export PS1='%B%F{cyan}%n@%m%f %F{blue}%~%f %#%b '
 
