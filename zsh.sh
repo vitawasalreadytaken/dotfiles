@@ -18,7 +18,14 @@ setopt HIST_FIND_NO_DUPS      # Prevents showing dups when using reverse search 
 source <(fzf --zsh)
 
 # Example prompt: `vita@host ~/some/dir %`
-export PS1='%B%F{cyan}%n@%m%f %F{blue}%~%f %#%b '
+# Hash hostname to pick a consistent color for user@host
+_hostname=$(hostname)
+_host_hash=$((16#$(echo -n $_hostname | md5sum | cut -c1-8)))
+_host_color_idx=$(($_host_hash % 7))
+_host_colors=(green yellow cyan magenta red blue white)
+_host_color=${_host_colors[$(($_host_color_idx + 1))]}
+
+export PS1="%B%F{${_host_color}}%n@%m%f %F{blue}%~%f %#%b "
 
 
 # No need to share with other users by default
