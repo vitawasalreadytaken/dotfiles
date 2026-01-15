@@ -15,7 +15,15 @@ setopt HIST_IGNORE_DUPS       # Ignores if the previous command is a duplicate
 setopt HIST_FIND_NO_DUPS      # Prevents showing dups when using reverse search (Ctrl+R)
 
 # fzf
-source <(fzf --zsh)
+version=$(fzf --version | grep -oE '[0-9]+\.[0-9]+' | head -1)
+if (( $(echo "$version >= 0.48" | bc -l) )); then
+    source <(fzf --zsh)
+else
+    # Older fzf versions on Ubuntu LTS: the --zsh option is not available and we need to
+    # source the key bindings and completion scripts manually.
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+    source /usr/share/doc/fzf/examples/completion.zsh
+fi
 
 # Example prompt: `vita@host ~/some/dir %`
 # Hash hostname to pick a consistent color for user@host
