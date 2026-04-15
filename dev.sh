@@ -88,6 +88,7 @@ alias gpu='git pull'
 alias guu='upg && gpu'
 alias grb='git rebase'
 alias gre1='git reset HEAD~1'
+alias lg='lazygit'
 
 # Itemised commit messages on this branch from the given ref (defaults to main).
 branchlog () {
