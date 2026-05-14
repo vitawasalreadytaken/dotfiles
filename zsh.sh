@@ -54,6 +54,8 @@ alias egrep='egrep --color'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color'
 alias ll='eza --long --all --group --git --time-style=long-iso'
+# The default Eza date colour is dark blue, which is hard to read on a dark terminal background. Override it with a light blue.
+export EZA_COLORS="da=38;5;111"   # light blue (256-color)
 alias tree='ll --tree'
 mkcd () { mkdir "$1" && cd "$1"; }
 alias b='bat'
