@@ -117,3 +117,22 @@ _uv_run_mod() {
     fi
 }
 compdef _uv_run_mod uv
+
+
+#
+# Various
+#
+
+sopsx() {
+	# How it works: _precommand makes zsh treat the word after sopsx as a command name and complete subsequent words
+	#according to that command. So sopsx terra<tab> completes terraform, and sopsx terraform pl<tab> completes plan.
+	# The function then re-quotes each arg ((q)) and joins them with spaces ((j: :)) into the single string
+	# sops exec-env expects (it runs the string via sh -c).
+	# Two notes:
+	# (q) quoting handles args with spaces/special chars correctly, so sopsx foo --bar="a b" survives
+	#   the round-trip through sh -c.
+	# If you want the .env path itself to vary, make it $1: sopsx() { sops exec-env "$1" "${(j: :)${(q)@[2,-1]}}" }
+	#   — but then completion gets messier, so a fixed file (or one per dir) is usually nicer.
+	sops exec-env .env "${(j: :)${(q)@}}"
+}
+compdef _precommand sopsx
